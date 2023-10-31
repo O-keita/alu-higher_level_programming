@@ -6,7 +6,7 @@ str_number = num[-1]
 last_number = int(str_number)
 if number > 5 < last_number:
     print(f"Last digit of {number} is {last_number} and is greater than 5")
-elif number < 5 < last_number:
+elif 0 < number < 5 < last_number:
     print(f"Last digit of {number} is -{last_number} and is greater than 5")
 
 elif last_number == 0:
@@ -15,4 +15,3 @@ elif number > 0 < last_number < 6:
     print(f"Last digit of {number} is {last_number} and less than 6 and not 0")
 elif number < 0 < last_number < 6:
     print(f"Last digit of {number} is -{last_number} and less than 6 and not 0")
-
