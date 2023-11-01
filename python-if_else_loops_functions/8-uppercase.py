@@ -11,4 +11,3 @@ def uppercase(s):
 # Test the function
 input_string = "Hello, World!"
 uppercase(input_string)
-
