@@ -1,22 +1,18 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-10000, 10000)
-num = str(number)
-str_number = num[-1]
-last_number = int(str_number)
-if number > 5 < last_number:
-    print(f"Last digit of {number} is {last_number}\
- and is greater than 5")
-elif 0 < number < 5 < last_number:
-    print(f"Last digit of {number} is -{last_number}\
- and is greater than 5")
+import random
 
-elif number == 0:
-    print(f"Last digit of {number} is\
- {last_number} and is 0")
-elif number > 0 < last_number < 6:
-    print(f"Last digit of {number} is {last_number}\
- and is less than 6 and not 0")
+# Generate a random signed number between -10000 and 10000
+number = random.randint(-10000, 10000)
+
+# Extract the last digit of the number
+last_digit = abs(number) % 10
+
+print(f"Last digit of {number} is {last_digit}", end=' ')
+
+if last_digit > 5:
+    print(f"and is greater than 5")
+elif last_digit == 0:
+    print(f"and is 0")
 else:
-    print(f"Last digit of {number} is -{last_number}\
- and is less than 6 and not 0")
+    print(f"and is less than 6 and not 0")
