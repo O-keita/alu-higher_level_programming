@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-def uppercase(s):
-    result = []
-    for char in s:
+def uppercase(str):
+    result = ""
+    for char in str:
         if 'a' <= char <= 'z':
-            uppercase_char = chr(ord(char) - ord('a') + ord('A'))
+            uppercase_char = chr(ord(char) - 32)
+            result += uppercase_char
         else:
-            uppercase_char = char
-        result.append(uppercase_char)
-    print(''.join(result))
-input_string = "Hello, World!"
-uppercase(input_string)
+            result += char
+    return result
+
+input_str = "Hello, World!"
+output_str = uppercase(input_str)
+print(output_str)
