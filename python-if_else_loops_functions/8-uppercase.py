@@ -8,8 +8,5 @@ def uppercase(s):
             uppercase_char = char
         result.append(uppercase_char)
     print(''.join(result))
-
-# Test the function
 input_string = "Hello, World!"
 uppercase(input_string)
-
