@@ -5,3 +5,4 @@ def print_last_digit(number):
         return "{}{}".format(last_digit, last_digit)
     else:
         return last_digit
+print(print_last_digit(-98))
