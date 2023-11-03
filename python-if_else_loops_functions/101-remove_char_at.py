@@ -5,7 +5,4 @@ def remove_char_at(s, n):
     else:
         return s  # If n is out of range, return the original string
 
-# Example usage:
-original_string = "Hello, World"
 result_string = remove_char_at(original_string, 3)
-print(result_string)  # Output: "Helo, World"
