@@ -4,5 +4,3 @@ def remove_char_at(s, n):
         return s[:n] + s[n+1:]
     else:
         return s  # If n is out of range, return the original string
-
-result_string = remove_char_at(original_string, 3)
