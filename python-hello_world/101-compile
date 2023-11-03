@@ -1,15 +1,25 @@
 #!/bin/bash
-import py_compile
 import os
+import py_compile
+
+# Get the Python file name from the environment variable
 pyfile = os.getenv("PYFILE")
 
-if pyfile:
-    try:
-        py_compile.compile(pyfile, doraise=True)
-        compiled_filename = pyfile + 'c'
+if not pyfile:
+    print("Error: PYFILE environment variable not set.")
+    exit(1)
 
-        print(f"Script '{pyfile}' compiled '{compiled_filename}'")
-    except py_compile.PyCompileError as e:
-        print(f"Compilation of '{pyfile}' failed: {e}")
-else:
-    print("Environment variable $PYFILE is not set..")
+# Check if the Python file exists
+if not os.path.exists(pyfile):
+    print(f"Error: Python file '{pyfile}' not found.")
+    exit(1)
+
+# Compile the Python file
+try:
+    py_compile.compile(pyfile, doraise=True)
+except py_compile.PyCompileError as e:
+    print(f"Error compiling {pyfile}: {e}")
+    exit(1)
+
+print(f"Successfully compiled {pyfile} to {pyfile}c.pyc")
+
