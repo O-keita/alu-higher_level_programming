@@ -2,8 +2,8 @@
 for char_code in range(ord('z'), ord('a') - 1, -1):
     char = chr(char_code)
     if char_code % 2 == 0:
-        char = char.upper()
+        char = char.upper() if char.islower() else char.lower()
     print("{}".format(char), end='')
 
-# Output:
-# zYxXwWvVuUtTsSrRqQpPoOnNmMlLkKjJiIhHgGfFeEdDcCbBaA
+# Output: zYxWvUtSrQpOnMlKjIhGfEdCbA
+
