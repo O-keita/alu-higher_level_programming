@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
+    results = []  # Create an empty list to store the results
     for item in my_list:
         if item % 2 == 0:
-            return "{} is divisible by 2".format(item)
-            
-        elif item % 2 ==1:
-            return "{} is not divisible by 2".format(item)
-        else:
-            return my_list
+            results.append("{} is divisible by 2".format(item))
+        elif item % 2 == 1:
+            results.append("{} is not divisible by 2".format(item))
+    return results
