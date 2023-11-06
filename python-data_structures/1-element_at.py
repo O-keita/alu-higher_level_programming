@@ -3,6 +3,6 @@
 def element_at(my_list, idx):
     index = my_list[idx]
     if idx < 0 or idx > len(my_list):
-        print("None")
+        return None
     else:
-        print("Element at index "+str(idx)+" is "+str(index))
+        return "Element at index {} is {}".format(idx, my_list[idx])
