@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#why
 def divisible_by_2(my_list=[]):
     results = []  # Create an empty list to store the results
     for item in my_list:
