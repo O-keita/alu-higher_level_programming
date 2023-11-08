@@ -2,5 +2,5 @@
 def safe_print_integer(value):
     try:
         print("{:}".format(value))
-    except TypeError:
+    except:
         print("{} is not an integer".format(value))
