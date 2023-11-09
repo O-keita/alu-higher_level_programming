@@ -16,19 +16,19 @@ def value(r):
         return 1000
     return -1
 
-def romanToDecimal(str):
+def roman_to_int(roman_string):
     res = 0
     i = 0
 
-    while (i < len(str)):
+    while (i < len(roman_string)):
 
         # Getting value of symbol s[i]
-        s1 = value(str[i])
+        s1 = value(roman_string[i])
 
-        if (i + 1 < len(str)):
+        if (i + 1 < len(roman_string)):
 
             # Getting value of symbol s[i + 1]
-            s2 = value(str[i + 1])
+            s2 = value(roman_string[i + 1])
 
             # Comparing both values
             if (s1 >= s2):
