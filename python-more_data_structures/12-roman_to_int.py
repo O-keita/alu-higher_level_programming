@@ -25,7 +25,10 @@ def roman_to_int(roman_string):
         # Getting value of symbol s[i]
         s1 = value(roman_string[i])
 
-        if (i + 1 < len(roman_string)):
+        if type(roman_string) is not str or type(roman_string) is None:
+            return 0
+
+        elif (i + 1 < len(roman_string)):
 
             # Getting value of symbol s[i + 1]
             s2 = value(roman_string[i + 1])
