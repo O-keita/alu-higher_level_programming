@@ -1,16 +1,29 @@
 #!/usr/bin/python3
-class py_solution:
-    def roman_to_int(self, s):
-        rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        int_val = 0
-        if s is None or type(s) is not str:
-            return 0
-        else:
-         
-         for i in range(len(s)):
-            if i > 0 and rom_val[s[i]] > rom_val[s[i - 1]]:
-                int_val += rom_val[s[i]] - 2 * rom_val[s[i - 1]]
-            else:
-                int_val += rom_val[s[i]]
+def roman_to_int(roman_string):
+    if not isinstance(roman_string, str) or roman_string is None:
+        return 0
 
-        return int_val
+    roman_values = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    total = 0
+    prev_value = 0
+
+    for symbol in reversed(roman_string):
+        value = roman_values.get(symbol, 0)
+
+        if value < prev_value:
+            total -= value
+        else:
+            total += value
+
+        prev_value = value
+
+    return total
