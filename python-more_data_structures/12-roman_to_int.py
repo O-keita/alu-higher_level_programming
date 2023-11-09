@@ -21,7 +21,7 @@ def value(r):
 		return 1000
 	return 0
 
-def roman_to_int(roman_string)::
+def roman_to_int(roman_string):
 	res = 0
 	i = 0
 
@@ -53,7 +53,3 @@ def roman_to_int(roman_string)::
 			i = i + 1
 
 	return res
-
-# Driver code
-print("Integer form of Roman Numeral is"),
-print(romanToDecimal("MCMIV"))
