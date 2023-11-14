@@ -5,7 +5,7 @@
 class Square:
     """Here we instantiate the variables below"""
 
-    def __init__(self,size=0):
+    def __init__(self, size=0):
         """Here we initialize the variable size"""
 
         if not isinstance(size, int):
