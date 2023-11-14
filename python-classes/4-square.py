@@ -18,6 +18,7 @@ class Square:
         """getter for retrieving"""
 
         return self.__size
+
     @size.setter
     def size(self, new_size):
         """ changing the value"""
