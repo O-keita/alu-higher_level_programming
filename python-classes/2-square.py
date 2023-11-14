@@ -9,7 +9,7 @@ class Square:
         """ Here we initialize the variable size"""
 
         if not isinstance(size, int):
-            raise TypeError("Value is not an integer")
+            raise TypeError("Size must be an integer")
         elif size < 0:
             raise ValueError("Value less than zero")
 
