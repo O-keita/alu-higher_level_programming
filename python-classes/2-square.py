@@ -8,6 +8,9 @@ class Square:
     def __init__(self,size=0):
         """ Here we initialize the variable size"""
 
-        assert(isinstance(size, int))
+        if not isinstance(size, int):
+            raise TypeError("Value is not an integer")
+        elif size < 0:
+            raise ValueError("Value less than zero")
 
         self.size = size
