@@ -13,4 +13,4 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
 
-        self._size = _Square__size
+        self._size = size
