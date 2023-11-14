@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-"""Defining the class variable Sqaure"""
+"""python3 -c 'print(__import__("my_module").__doc__)'"""
 
 
 class Sqaure:
-    """Represent a square"""
+    """'print(__import__("my_module").MyClass.__doc__)'"""
 
     def __init__(self, size):
-        """Initialized a new square
-        Args:
-            size(int): the size of the new sqaure
-
-        """
-
+        """python3 -c 'print(__import__("my_module").my_function.__doc__)'"""
+        """python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'"""
         self.__size = size
