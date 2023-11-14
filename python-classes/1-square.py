@@ -3,9 +3,13 @@
 
 
 class Sqaure:
-    """After defining we initialized the intances"""
+    """Represent a square"""
 
     def __init__(self, size):
-        """Making the size private"""
+        """Initialized a new square
+        Args:
+            size(int): the size of the new sqaure
+
+        """
 
         self.__size = size
