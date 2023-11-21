@@ -52,15 +52,3 @@ class Rectangle:
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.width, self.height)
-
-# Example usage:
-rectangle = Rectangle(4, 3)
-print(rectangle.area())       # Output: 12
-print(rectangle.perimeter())  # Output: 14
-print(str(rectangle))
-# Output:
-# ####
-# ####
-# ####
-print(repr(rectangle))        # Output: Rectangle(4, 3)
-
