@@ -4,7 +4,7 @@
 
 def is_same_class(obj, a_class):
     """ Now checking the instances"""
-    if isinstance(obj, a_class):
+    if type(obj) == a_class:
         return True
     else:
         return False
