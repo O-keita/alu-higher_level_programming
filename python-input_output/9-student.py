@@ -15,4 +15,4 @@ class Student:
         self.age = age
 
     def to_json(self):
-        return self.__dict___
+        return self.__dict__
