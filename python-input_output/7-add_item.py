@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Json sucks"""
+"""Json documentaion python3"""
 import sys
 from save_to_json_file import save_to_json_file
 from load_from_json_file import load_from_json_file
@@ -7,8 +7,8 @@ from load_from_json_file import load_from_json_file
 
 
 def main():
-    # Load existing items from file or initialize an empty list
-    try:
+    """ documentation is boring"""
+
         items = load_from_json_file('add_item.json')
     except FileNotFoundError:
         items = []
