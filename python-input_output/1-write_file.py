@@ -6,7 +6,7 @@ def write_file(filename="", text=""):
     """ write the file with w"""
 
     with open(filename, 'w', 'utf-8') as file:
-        words = file.write()
+        words = file.write(text)
 
         char = len(words)
         return char
