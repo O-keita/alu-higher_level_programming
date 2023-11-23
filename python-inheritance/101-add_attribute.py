@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""Add atributes"""
+""" Attribute class """
 
+
+class MyClass:
+    pass
 
 def add_attribute(obj, attr_name, attr_value):
     """
@@ -15,6 +18,8 @@ def add_attribute(obj, attr_name, attr_value):
     - TypeError: If the object cannot have a new attribute.
     """
     if not hasattr(obj, '__dict__') and not hasattr(obj, '__slots__'):
-        raise TypeError("can't add new attribute")
+        error_message = "can't add new attribute"
+        print(f"Error: {error_message}")
+        raise TypeError(error_message)
 
     setattr(obj, attr_name, attr_value)
