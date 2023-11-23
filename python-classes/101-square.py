@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Talking about squares"""
+""" This is documentation
+what else do you want"""
 
 
 class Square:
