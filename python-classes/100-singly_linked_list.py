@@ -3,7 +3,8 @@
 
 
 class Node:
-    """A class representing a node of a singly linked list."""
+    """A class representing a node of a
+    singly linked list."""
 
     def __init__(self, data, next_node=None):
         """
@@ -11,7 +12,7 @@ class Node:
 
         Parameters:
         - data (int): The data to be stored in the node.
-        - next_node (Node or None): The next node in the linked list.
+        - next_node (Node or None): The next node in 
         """
         self.data = data
         self.next_node = next_node
