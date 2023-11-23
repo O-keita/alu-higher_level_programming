@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ myInt class """
 
+
 class MyInt(int):
     """ initialization"""
 
