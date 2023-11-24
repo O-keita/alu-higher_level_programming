@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-""" module documented """
+#!/usr/bin/python
+""" mosule documented """
 
 
 class Square:
@@ -113,7 +113,16 @@ class Square:
         Returns:
             str: The string representation of the square.
         """
-        return self.my_print()
+        result = ""
+        if self.__size == 0:
+            result += "\n"
+        else:
+            for _ in range(self.__position[1]):
+                result += "\n"
+            for _ in range(self.__size):
+                result += " " * self.__position[0] + "#" * self.__size + "\n"
+        return result.rstrip()
+
 
 if __name__ == "__main__":
     my_square = Square(5, (0, 0))
