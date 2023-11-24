@@ -14,6 +14,7 @@ Methods:
 
 import math
 
+
 class MagicClass:
     """ class documented"""
 
