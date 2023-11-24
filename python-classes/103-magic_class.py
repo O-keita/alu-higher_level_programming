@@ -11,11 +11,10 @@ Methods:
     circumference(self): Returns the circle's circumference.
 """
 
+
 import math
 
 class MagicClass:
-    """ Okay it is documented now"""
-
     def __init__(self, radius):
         """
         Initializes MagicClass with a given radius.
@@ -35,3 +34,16 @@ class MagicClass:
     def circumference(self):
         """Returns the circle's circumference."""
         return 2 * math.pi * self.__radius
+
+# Example instantiation and usage
+if __name__ == "__main__":
+    # Instantiate MagicClass with a radius value
+    circle = MagicClass(5.0)
+
+    # Example usage:
+    area_result = circle.area()
+    circumference_result = circle.circumference()
+
+    print(f"Radius: {circle._MagicClass__radius}")  # Accessing the private attribute
+    print(f"Area: {area_result}")
+    print(f"Circumference: {circumference_result}")
