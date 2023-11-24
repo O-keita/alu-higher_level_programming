@@ -40,7 +40,7 @@ class Square:
             return
 
         for _ in range(self._size):
-            print("#####" if self._position[1] == 0 else " " * self._position[1] + "#####")
+            print("#####" if self._position[1] == 0 else " " * self._position[1] + "#####", end="")
 
     def __str__(self):
         self.my_print()
