@@ -83,7 +83,7 @@ class Square:
         Args:
             value (tuple): The new position of the
             square as a tuple of 2 positive integers.
-            Raises: TypeError: If position is not a tuple of 
+            Raises: TypeError: If position is not a tuple
         """
 
         if not isinstance(value, tuple) or len(value) != 2\
