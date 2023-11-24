@@ -103,7 +103,7 @@ class Square:
 
     def my_print(self):
         """
-        Prints the 
+        Prints hell
         """
 
         if self.__size == 0:
