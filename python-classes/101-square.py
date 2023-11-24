@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module documented """
+""" class docummented"""
 
 
 class Square:
@@ -8,15 +8,16 @@ class Square:
 
     Attributes:
         size (int): The size of the square.
-        position (tuple): The position of the square as
-        a tuple of 2 positive integers.
+        position (tuple): The position of the
+        square as a tuple of 2 positive integers.
 
     Methods:
-        __init__(self, size=0, position=(0, 0)): Initializes a
-        new Square instance.
-        area(self): Calculates and returns the area of the square.
-        my_print(self): Prints the square with the character
-        '#' in stdout, considering size and position.
+        __init__(self, size=0, position=(0, 0)):
+        Initializes a new Square instance.
+        area(self): Calculates and returns the
+        area of the square.
+        my_print(self): Prints the square using
+        '#' characters, considering the size and position.
 
     Properties:
         size: Gets or sets the size of the square.
@@ -69,8 +70,8 @@ class Square:
         Gets the position of the square.
 
         Returns:
-            tuple: The position of the square as a tuple
-            of 2 positive integers.
+            tuple: The position of the square
+            as a tuple of 2 positive integers.
         """
         return self.__position
 
@@ -80,11 +81,11 @@ class Square:
         Sets the position of the square.
 
         Args:
-            value (tuple): The new position of the square
-            as a tuple of 2 positive integers.
+            value (tuple): The new position of the
+            square as a tuple of 2 positive integers.
 
         Raises:
-            TypeError: If position is not a tuple of 2 positive integers.
+            TypeError: If position is not a tuple of 
         """
         if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -101,9 +102,7 @@ class Square:
 
     def my_print(self):
         """
-        Prints the square with the character '#'
-        in stdout, considering size and position.
-        If size is equal to 0, prints an empty line.
+        Prints the 
         """
         if self.__size == 0:
             print()
@@ -115,12 +114,19 @@ class Square:
 
     def __str__(self):
         """
-        Provides a string representation of the square, allowing direct printing.
 
         Returns:
             str: The string representation of the square.
         """
-        return self.my_print()
+        result = ""
+        if self.__size == 0:
+            result += "\n"
+        else:
+            for _ in range(self.__position[1]):
+                result += "\n"
+            for _ in range(self.__size):
+                result += " " * self.__position[0] + "#" * self.__size + "\n"
+        return result.rstrip()
 
 if __name__ == "__main__":
     my_square = Square(5, (0, 0))
