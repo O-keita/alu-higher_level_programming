@@ -14,6 +14,8 @@ Methods:
 import math
 
 class MagicClass:
+    """ Okay it is documented now"""
+
     def __init__(self, radius):
         """
         Initializes MagicClass with a given radius.
