@@ -15,6 +15,7 @@ Methods:
 import math
 
 class MagicClass:
+    """ class documented"""
     def __init__(self, radius):
         """
         Initializes MagicClass with a given radius.
