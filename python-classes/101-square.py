@@ -44,4 +44,3 @@ class Square:
 
     def __str__(self):
         self.my_print()
-        return ""
