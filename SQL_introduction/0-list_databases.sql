@@ -1,2 +1,2 @@
-#the sql command to show all my database
+--the sql command to show all my database
 SHOW DATABASES;
