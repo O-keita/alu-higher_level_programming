@@ -1,3 +1,3 @@
 #!/bin/bash
 #This networking sucks
-curl -sSL -H "X-HolbertonSchool-User-Id: 98" "$1"
+[ "$(curl -sSL -H "X-HolbertonSchool-User-Id: 98" "$1")" == "OK" ] && echo "OK" || echo "Error"
