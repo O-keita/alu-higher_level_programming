@@ -1,3 +1,3 @@
 #!/bin/bash
 #Really sucks
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "email=test@gmail.com&subject=I will always be here for PLD" "$1" | cat
+curl -sSLX POST -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
