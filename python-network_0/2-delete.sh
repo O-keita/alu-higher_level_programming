@@ -1,3 +1,3 @@
 #!/bin/bash
 #Delete using curl
-curl -X DELETE -fsSL "$1" | cat
+curl -X DELETE "$1" | cat
