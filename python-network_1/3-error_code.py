@@ -1,45 +1,39 @@
 #!/usr/bin/python3
-""" 3-error_code.py what the fuch is this if not doc """
+"""3-error_code.py"""
 
 
 import urllib.request
 import urllib.error
 import sys
 
-def fetch_url_content(url):
+def fetch_url(url):
     """
-    Fetches the content of a URL and displays it.
+    Fetches the content of a URL and prints the decoded body.
 
     Args:
-        url (str): The URL to fetch content from.
+        url (str): The URL to fetch.
 
-    Returns:
-        None: Displays the content or handles HTTPError and prints the error code.
+    Raises:
+        urllib.error.HTTPError: If the HTTP request returns an error status code.
     """
     try:
+        # Open the URL and read the response
         with urllib.request.urlopen(url) as response:
-            content = response.read().decode('utf-8')
-            print(content)
+            # Decode the response body using UTF-8 and print it
+            body = response.read().decode('utf-8')
+            print(body)
     except urllib.error.HTTPError as e:
-        # Handle HTTPError exceptions
+        # Handle HTTPError by printing the error code
         print(f"Error code: {e.code}")
 
-def main():
-    """
-    Main function to handle command-line arguments and execute the script.
-    """
-    # Check if the correct number of arguments is provided
+if __name__ == "__main__":
+    # Check if the correct number of command-line arguments is provided
     if len(sys.argv) != 2:
         print("Usage: python script.py <URL>")
         sys.exit(1)
 
-    # Use the provided URL from command-line arguments
+    # Extract the URL from the command-line argument
     url = sys.argv[1]
 
-    # Call the fetch_url_content function with the provided URL
-    fetch_url_content(url)
-
-# Check if the script is executed directly
-if __name__ == "__main__":
-    # Execute the main function
-    main()
+    # Call the fetch_url function with the provided URL
+    fetch_url(url)
