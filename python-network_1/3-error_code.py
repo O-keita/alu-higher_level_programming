@@ -3,19 +3,21 @@
 
 
 import urllib.request
-import urllib.parse
+import urllib.error
 import sys
 
-if len(sys.argv) != 3:
-    print("Usage: python script.py <URL> <email>")
-    sys.exit(1)
+def fetch_url(url):
+    try:
+        with urllib.request.urlopen(url) as response:
+            body = response.read().decode('utf-8')
+            print(body)
+    except urllib.error.HTTPError as e:
+        print(f"Error code: {e.code}")
 
-url = sys.argv[1]
-email = sys.argv[2]
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <URL>")
+        sys.exit(1)
 
-data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-req = urllib.request.Request(url, data=data, method='POST')
-
-with urllib.request.urlopen(req) as response:
-    content = response.read().decode('utf-8')
-    print(content)     
+    url = sys.argv[1]
+    fetch_url(url) 
