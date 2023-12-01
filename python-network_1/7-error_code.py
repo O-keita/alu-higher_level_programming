@@ -6,4 +6,7 @@ import sys
 if __name__ == '__main__':
     url = sys.argv[1]
     response = requests.get(url)
-    print("{}".format(response.headers.get("X-Request-Id")))
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
+    else:
+        print("{}".format(response.text))
