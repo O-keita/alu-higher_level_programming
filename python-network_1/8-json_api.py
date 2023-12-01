@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Documented now"""
+"""Documentedi ALU why?? now"""
 import requests
 import sys
 
