@@ -10,6 +10,7 @@
 
 import requests
 import sys
+""" documented now"""
 
 def get_x_request_id(url):
     """
