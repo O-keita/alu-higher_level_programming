@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """3-error_code.py"""
 
-
+""" module """
 import urllib.request
+""" module """
 import urllib.error
+""" module"""
 import sys
 
 def fetch_url(url):
