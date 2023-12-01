@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 3-error_code.py """
+""" 3-error_code.py what the fuch is this if not doc """
 
 
 import urllib.request
