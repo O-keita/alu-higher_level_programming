@@ -7,6 +7,7 @@ import urllib.error
 import sys
 
 def fetch_url(url):
+    """ this is documented"""
     try:
         with urllib.request.urlopen(url) as response:
             body = response.read().decode('utf-8')
@@ -15,6 +16,7 @@ def fetch_url(url):
         print(f"Error code: {e.code}")
 
 if __name__ == "__main__":
+    """ this is also documented"""
     if len(sys.argv) < 2:
         print("Usage: python script.py <URL>")
         sys.exit(1)
