@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Question 10"""
+""" Module documented """
 
 
 import requests
