@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+ Sends a request to the specified URL and displays the value of the X-Request-Id variable
+    in the response header.
+
+    Args:
+        url (str): The URL to send the request to.
+"""
 
 
 import requests
