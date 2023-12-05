@@ -13,16 +13,19 @@ Import module:
 
 	First Name:
 		>>> say_my_name("Bob")
-		My name is Bob
+		My name is Bob 
 
 	last Name Empty string:
 		>>> say_my_name("Omar", "")
-		My name is Omar
+		My name is Omar 
 	
 	Test Both empty:
 		>>> say_my_name("","")
-		My name is
+		My name is  
 
+	Test with both args with space:
+		>>> say_my_name(" ", " ")
+		my name is  
 	Test First name not string
 		>>> say_my_name(23, "Omar")
 		Traceback (most recent call last):
