@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-
-"""Defines a base model class."""
+"""Defines class."""
 import json
 import csv
 import turtle
 
 
 class Base:
-    """Base model.
-
-    This Represents the "base" for all other classes in project 0x0C*.
-
-    Private Class Attributes:
-        __nb_object (int): Number of instantiated Bases.
+    """Represent the base model.
     """
 
     __nb_objects = 0
@@ -31,10 +25,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON serialization of a list of dicts.
-
-        Args:
-            list_dictionaries (list): A list of dictionaries.
+        """
+        Return the JSON serialization of a list of dicts.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -42,10 +34,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON serialization of a list of objects to a file.
-
-        Args:
-            list_objs (list): A list of inherited Base instances.
+        """
+        Write the JSON serialization of a list of objects to a file.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
@@ -71,7 +61,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instantied from a dictionary of attributes.
+        """Return a class instantiated from a dictionary of attributes.
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
@@ -105,9 +95,6 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
-
-        Args:
-            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -145,44 +132,3 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
-
-        Args:
-            list_rectangles (list): A list of Rectangle objects to draw.
-            list_squares (list): A list of Square objects to draw.
-        """
-        turt = turtle.Turtle()
-        turt.screen.bgcolor("#b7312c")
-        turt.pensize(3)
-        turt.shape("turtle")
-
-        turt.color("#ffffff")
-        for rect in list_rectangles:
-            turt.showturtle()
-            turt.up()
-            turt.goto(rect.x, rect.y)
-            turt.down()
-            for i in range(2):
-                turt.forward(rect.width)
-                turt.left(90)
-                turt.forward(rect.height)
-                turt.left(90)
-            turt.hideturtle()
-
-        turt.color("#b5e3d8")
-        for sq in list_squares:
-            turt.showturtle()
-            turt.up()
-            turt.goto(sq.x, sq.y)
-            turt.down()
-            for i in range(2):
-                turt.forward(sq.width)
-                turt.left(90)
-                turt.forward(sq.height)
-                turt.left(90)
-            turt.hideturtle()
-
-        turtle.exitonclick()
