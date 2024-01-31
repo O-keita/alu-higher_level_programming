@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const concat = (arg1 = undefined, arg2 = undefined) => {
-  console.log(arg1 + ' is ' + arg2);
-};
-concat();
+const arg1 = process.argv[2] || undefined;
+const arg2 = process.argv[3] || undefined;
+
+console.log(arg1 + ' is ' + arg2);
