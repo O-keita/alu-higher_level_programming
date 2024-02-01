@@ -1,27 +1,12 @@
 #!/usr/bin/node
-
-function computeFactorial (n, isFirstCall = true) {
-  if (isNaN(n)) {
-    if (isFirstCall) {
-      console.log(1);
+function factorial (n) {
+    if (n < 0) {
+      return (-1);
     }
-    return 1;
-  } else if (n <= 1) {
-    if (isFirstCall) {
-      console.log(1);
+    if (n === 0 || isNaN(n)) {
+      return (1);
     }
-    return 1;
-  } else {
-    const result = BigInt(n) * BigInt(computeFactorial(n - 1, false));
-    if (isFirstCall) {
-      console.log(result.toString());
-    }
-    return result;
+    return (n * factorial(n - 1));
   }
-}
-
-// Parse the first command-line argument as an integer
-const input = process.argv[2] ? parseInt(process.argv[2], 10) : NaN;
-
-// Example usage:
-computeFactorial(input);
+  
+  console.log(factorial(Number(process.argv[2])));
