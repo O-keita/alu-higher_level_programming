@@ -23,8 +23,8 @@ class Rectangle {
 
     let newWidth = this.width;
 
-    this.height = this.width;
-    this.width = newWidth;
+    this.width = this.height;
+    this.height = newWidth;
   }
 
   double () {
