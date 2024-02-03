@@ -20,10 +20,11 @@ class Rectangle {
   }
 
   rotate () {
-    newWidth = this.width;
+
+    let newWidth = this.width;
 
     this.height = this.width;
-    this.width = new_width;
+    this.width = newWidth;
   }
 
   double () {
