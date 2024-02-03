@@ -1,0 +1,1 @@
+javascript_objects_scopes_closures, about class, inheritance, encapsulation and others
