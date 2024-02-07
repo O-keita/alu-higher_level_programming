@@ -11,9 +11,8 @@ const printTitle = (movieId) => {
     } else {
       try {
         const movie = JSON.parse(body);
-        const foundObject = movie.map(obj => obj.id === movieId);
-        const movieTitle = foundObject ? foundObject.title : null;
-        console.log(movieTitle);
+
+        console.log(`${movie.title}`);
       } catch (parseError) {
         console.log(parseError.message);
       }
