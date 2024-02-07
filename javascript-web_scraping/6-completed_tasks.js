@@ -1,48 +1,26 @@
 #!/usr/bin/node
 
 const request = require('request');
+const url = process.argv[2];
 
-const computeCompletedTasks = (apiUrl) => {
-  request.get(apiUrl, (error, response, body) => {
-    if (error) {
-      console.error(`Error making request: ${error}`);
-      process.exit(1);
-    }
-
-    if (response.statusCode !== 200) {
-      console.error(`Failed to fetch data. Status code: ${response.statusCode}`);
-      process.exit(1);
-    }
-
-    try {
-      const todos = JSON.parse(body);
-
-      const userTasks = {};
-
-      todos.forEach((todo) => {
-        if (todo.completed) {
-          const userId = todo.userId;
-          userTasks[userId] = (userTasks[userId] || 0) + 1;
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const completed = {};
+    const tasks = JSON.parse(body);
+    for (const i in tasks) {
+      const task = tasks[i];
+      if (task.completed === true) {
+        if (completed[task.userId] === undefined) {
+          completed[task.userId] = 1;
+        } else {
+          completed[task.userId]++;
         }
-      });
-
-      // Print users with completed tasks
-      Object.entries(userTasks).forEach(([userId, completedTasks]) => {
-        console.log(JSON.stringify(userTasks, null, 2));
-      });
-    } catch (parseError) {
-      console.error(`Error parsing JSON: ${parseError.message}`);
-      process.exit(1);
+      }
     }
-  });
-};
-
-if (require.main === module) {
-  if (process.argv.length !== 3) {
-    console.error('Usage: ./computeCompletedTasks.js <API_URL>');
-    process.exit(1);
+    console.log(completed);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
-
-  const apiUrl = process.argv[2];
-  computeCompletedTasks(apiUrl);
-}
+});
