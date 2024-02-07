@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const readFiles = (path) => {
   try {
-    const content = fs.readFile(path, 'utf-8');
+    const content = fs.readFileSync(path, 'utf-8');
 
     console.log(content);
   } catch (error) {
