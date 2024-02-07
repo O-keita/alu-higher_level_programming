@@ -28,7 +28,7 @@ const computeCompletedTasks = (apiUrl) => {
 
       // Print users with completed tasks
       Object.entries(userTasks).forEach(([userId, completedTasks]) => {
-        console.log(`{${userId}: ${completedTasks}}`);
+        console.log(JSON.stringify(userTasks, null, 2));
       });
     } catch (parseError) {
       console.error(`Error parsing JSON: ${parseError.message}`);
