@@ -1,0 +1,1 @@
+require.main === module I am happy I know this one now
