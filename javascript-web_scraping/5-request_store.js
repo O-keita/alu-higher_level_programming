@@ -4,7 +4,7 @@ const request = require('request');
 const fs = require('fs');
 
 const streamFile = (url, path) => {
-  request(url).pipe(fs.createWriteStream(url));
+  request(url).pipe(fs.createWriteStream(path));
 };
 
 if (require.main === module) {
