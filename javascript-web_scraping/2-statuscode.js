@@ -7,7 +7,7 @@ const statusCode = (url) => {
     if (error) {
       console.log(`Error: ${error.message}`);
     } else {
-      console.log(`Code: ${response.statusCode}`);
+      console.log(`code: ${response.statusCode}`);
     }
   });
 };
