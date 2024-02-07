@@ -3,7 +3,7 @@
 const request = require('request');
 
 const printTitle = (movieId) => {
-  const url = 'https://swapi-api.alx-tools.com/api/films/:id';
+  const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
   request.get(url, (error, response, body) => {
     if (error) {
@@ -11,7 +11,6 @@ const printTitle = (movieId) => {
     } else {
       try {
         const movie = JSON.parse(body);
-
         console.log(`${movie.title}`);
       } catch (parseError) {
         console.log(parseError.message);
